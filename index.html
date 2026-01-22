@@ -58,20 +58,18 @@
     }
 
     #tabs {
-      display: flex;
-      align-items: center;
-      background-color: #101010;
-      padding: 5px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      position: relative;
-    }
+  display: flex;
+  align-items: stretch;
+  background-color: #101010;
+  padding: 0;
+  height: 40px;
+}
+
 
 .tab-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 6px;   /* space between icon and text */
-  margin-left: -4px;   /* move the icon 4px left */
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
   flex-shrink: 0;
 }
 
@@ -676,7 +674,7 @@
         };
       }
 
-      function createTab(name, content = '--[[ \n\tSilicon Executor\n\tcredits to Cloudy for the monaco...\n\tMade with ❤ by @nuag3ux and @nevermever\n]]--') {
+      function createTab(name, content = '--[[ \n\tSilicon Executor\n\tcredits to Cloudy for the monaco...\n\tMade with ? by @nuag3ux and @nevermever\n]]--') {
         const tabId = `tab-${tabIdCounter++}`;
 
         const tab = document.createElement('div');
@@ -956,7 +954,7 @@ tab.appendChild(closeTabBtn);
           const titleElem = tab.querySelector('.tab-title');
           const title = titleElem.textContent;
           const editorWrapper = document.getElementById(`editor-wrapper-${tabId}`);
-          const editor = editorWrapper && editors[tabId] ? editors[tabId].getValue() : '--[[ \n\tSuffix Executor\n\tcredits to Cloudy for the monaco...\n\tMade with ❤ by @nuag3ux and @nevermever\n]]--';
+          const editor = editorWrapper && editors[tabId] ? editors[tabId].getValue() : '--[[ \n\tSuffix Executor\n\tcredits to Cloudy for the monaco...\n\tMade with ? by @nuag3ux and @nevermever\n]]--';
           tabs.push({ id: tabId, name: title, content: editor });
         });
         localStorage.setItem('zenith-tabs', JSON.stringify(tabs));
